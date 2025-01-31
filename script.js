@@ -5,17 +5,17 @@ const problems = {
             question: "\\[\\int_{1}^{\\infty} \\frac{1}{x^2} dx\\]",
             choices: [1, 2, 0, "発散", "-1", "1/2"],
             correctIndex: 0,
-            explanation: "\\[\\lim_{b \\to \\infty} \\int_{1}^{b} x^{-2} dx = \\lim_{b \\to \\infty} \\left[-x^{-1}\\right]_1^b = \\lim_{b \\to \\infty} \\left(-\\frac{1}{b} + 1\\right) = 1\\]"
+            explanation: "\\[\\lim_{c \\to \\infty} \\int_{1}^{c} x^{-2} dx = \\lim_{c \\to \\infty} \\left[-x^{-1}\\right]_1^c = \\lim_{c \\to \\infty} \\left(-\\frac{1}{c} + 1\\right) = 1\\]"
         },
         {
             question: "\\[\\int_{0}^{1} \\frac{1}{\\sqrt{x}} dx\\]",
-            choices: [2, 1, 0, "発散", "1/2", "√2"],
+            choices: [2, 1, 0, "発散", "1/2", "\\sqrt{2}"],
             correctIndex: 0,
-            explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\lim_{a \\to +0} \\int_{a}^{1} x^{-1/2} dx = \\lim_{a \\to +0} \\left[2\\sqrt{x}\\right]_a^1 = 2(1 - 0) = 2\\]"
+            explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\lim_{c \\to +0} \\int_{c}^{1} x^{-1/2} dx = \\lim_{c \\to +0} \\left[2\\sqrt{x}\\right]_c^1 = 2(1 - 0) = 2\\]"
         },
         {
             question: "\\[\\int_{0}^{\\infty} \\frac{1}{1+x^2} dx\\]",
-            choices: ["π/2", "π", "2π", "1", "∞", "0"],
+            choices: ["\\pi/2", "\\pi", "2 \\pi", "1", "\\infty", "0"],
             correctIndex: 0,
             explanation: "\\[\\int_{0}^{\\infty} \\frac{1}{1+x^2} dx = \\lim_{c\\to \\infty}\\int_{0}^{c} \\frac{1}{1+x^2} dx\\] \\[ = \\lim_{c\\to \\infty}\\left[\\mathrm{arctan}\\ x\\right]_{0}^{c} = \\lim_{c\\to \\infty}\\mathrm{arctan}\\ c =\\frac{π}{2}\\]"
         },
@@ -32,16 +32,16 @@ const problems = {
             explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\int_{0}^{1} x^{-2/3} dx = \\lim_{\\varepsilon\\rightarrow +0}\\int_{\\varepsilon}^{1} x^{-2/3} dx = \\lim_{\\varepsilon\\rightarrow +0}\\left[3x^{1/3}\\right]_{\\varepsilon}^1 = 3\\]"
         },
         {
-            question: "\\[\\int_{0}^{\\pi/2} \\tan x dx\\]",
-            choices: ["発散", "0", "1", "π/2", "∞", "-∞"],
+            question: "\\[\\int_{0}^{\\pi/2} \\tan x\\ dx\\]",
+            choices: ["\\infty", "0", "1", "\\pi/2", "\\pi", "- \\infty"],
             correctIndex: 0,
-            explanation: "\\[\\lim_{b \\to \\pi/2^-} \\int_{0}^{b} \\tan x dx = \\lim_{b \\to \\pi/2^-} [-\\ln|\\cos x|]_0^b = \\infty\\]"
+            explanation: "\\(\\int \\tan x\\ dx = \\ln |\\cos x| +C\\) より，\\[\\int_{0}^{\\pi/2} \\tan x\\ dx = \\lim_{c \\to \\frac{\\pi}{2}-0} \\int_{0}^{c} \\tan x\\ dx\\]\\[ = \\lim_{c \\to \\frac{\\pi}{2}-0} [-\\ln|\\cos x|\\ ]_{0}^{c} = \\infty\\]"
         },
         {
             question: "\\[\\int_{0}^{2} \\frac{1}{(x-1)^2} dx\\]",
-            choices: ["発散", 2, 1, 0, "π", "∞"],
+            choices: ["発散", 2, 1, 0, "\\frac{1}{2}", "\\frac{3}{2}"],
             correctIndex: 0,
-            explanation: "x=1 で不連続\\[\\int_{0}^{2} \\frac{1}{(x-1)^2} dx = \\int_{0}^{1} \\frac{1}{(x-1)^2} dx + \\int_{1}^{2} \\frac{1}{(x-1)^2} dx\\] 両方の発散"
+            explanation: "\\(x=1\\) で被積分関数が発散します。\\[\\int_{0}^{2} \\frac{1}{(x-1)^2} dx = \\int_{0}^{1} \\frac{1}{(x-1)^2} dx + \\int_{1}^{2} \\frac{1}{(x-1)^2} dx\\] 両方の発散"
         },
         {
             question: "\\[\\int_{0}^{\\infty} \\sin x dx\\]",
