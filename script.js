@@ -3,13 +3,13 @@ const problems = {
     beginner: [
         {
             question: "\\[\\int_{1}^{\\infty} \\frac{1}{x^2} dx\\]",
-            choices: [1, 2, 0, "発散", "-1", "\\frac{1}{2}"],
+            choices: [1, 2, "\\frac{3}{2}", "発散", "3", "\\frac{1}{2}"],
             correctIndex: 0,
             explanation: "\\[\\lim_{c \\to \\infty} \\int_{1}^{c} x^{-2} dx = \\lim_{c \\to \\infty} \\left[-x^{-1}\\right]_1^c = \\lim_{c \\to \\infty} \\left(-\\frac{1}{c} + 1\\right) = 1\\]"
         },
         {
             question: "\\[\\int_{0}^{1} \\frac{1}{\\sqrt{x}} dx\\]",
-            choices: [2, 1, 0, "発散", "\\frac{1}{2}", "\\sqrt{2}"],
+            choices: [2, 1, "\\frac{3}{2}", "発散", "\\frac{1}{2}", "\\sqrt{2}"],
             correctIndex: 0,
             explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\lim_{c \\to +0} \\int_{c}^{1} x^{-1/2} dx = \\lim_{c \\to +0} \\left[2\\sqrt{x}\\right]_c^1 = 2(1 - 0) = 2\\]"
         },
@@ -20,34 +20,34 @@ const problems = {
             explanation: "\\[\\int_{0}^{\\infty} \\frac{1}{1+x^2} dx = \\lim_{c\\to \\infty}\\int_{0}^{c} \\frac{1}{1+x^2} dx\\] \\[ = \\lim_{c\\to \\infty}\\left[\\mathrm{arctan}\\ x\\right]_{0}^{c} = \\lim_{c\\to \\infty}\\mathrm{arctan}\\ c =\\frac{π}{2}\\]"
         },
         {
-            question: "\\[\\int_{0}^{1} \\ln x dx\\]",
-            choices: [-1, 0, "発散", "1", "e", "- \\infty"],
+            question: "\\[\\int_{0}^{1} \\ln x\\ dx\\]",
+            choices: ["-1", "-2", "発散", "-e^{- 1}", "-e", "- \\infty"],
             correctIndex: 0,
-            explanation: "部分積分法で計算\\[\\int_{0}^{1} \\ln x dx = \\left[x\\ln x - x\\right]_0^1 = (-1) - \\lim_{x\\to0^+} (x\\ln x - x) = -1\\]"
+            explanation: "部分積分法で計算すると，\\(\\int \\ln x\\ dx = x\\ln x -x. \\)\\[\\int_{0}^{1} \\ln x\\ dx = \\lim_{c \\to +0}\\int_{c}^{1} \\ln x\\ dx = \\lim_{c \\to +0} \\left[x\\ln x - x\\right]_{c}^1 \\]\\[ = (-1) - \\lim_{c\\to +0} (x\\ln x - x) = -1\\]"
         },
         {
-            question: "\\[\\int_{0}^{1} \\frac{1}{x^{2/3}} dx\\]",
-            choices: [3, 6, 0, "発散", "2", "\\frac{3}{2}"],
+            question: "\\[\\int_{0}^{1} \\frac{1}{x^{\\frac{2}{3}}} dx\\]",
+            choices: [3, 6, 4, "発散", "2", "\\frac{3}{2}"],
             correctIndex: 0,
-            explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\int_{0}^{1} x^{-2/3} dx = \\lim_{\\varepsilon\\rightarrow +0}\\int_{\\varepsilon}^{1} x^{-2/3} dx = \\lim_{\\varepsilon\\rightarrow +0}\\left[3x^{1/3}\\right]_{\\varepsilon}^1 = 3\\]"
+            explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\int_{0}^{1} x^{-\\frac{2}{3}} dx = \\lim_{\\varepsilon\\rightarrow +0}\\int_{\\varepsilon}^{1} x^{-\\frac{2}{3}} dx = \\lim_{\\varepsilon\\rightarrow +0}\\left[3x^{\\frac{1}{3}}\\right]_{\\varepsilon}^1 = 3\\]"
         },
         {
-            question: "\\[\\int_{0}^{\\pi/2} \\tan x\\ dx\\]",
-            choices: ["\\infty", "0", "1", "\\pi/2", "\\pi", "- \\infty"],
+            question: "\\[\\int_{0}^{\\frac{\\pi}{2}} \\tan x\\ dx\\]",
+            choices: ["\\infty", "0", "1", "\\frac{\\pi}{2}", "\\pi", "- \\infty"],
             correctIndex: 0,
-            explanation: "\\(\\int \\tan x\\ dx = \\ln |\\cos x| +C\\) より，\\[\\int_{0}^{\\pi/2} \\tan x\\ dx = \\lim_{c \\to \\frac{\\pi}{2}-0} \\int_{0}^{c} \\tan x\\ dx\\]\\[ = \\lim_{c \\to \\frac{\\pi}{2}-0} [-\\ln|\\cos x|\\ ]_{0}^{c} = \\infty\\]"
+            explanation: "\\(\\int \\tan x\\ dx = \\ln |\\cos x| +C\\) より，\\[\\int_{0}^{\\frac{\\pi}{2}} \\tan x\\ dx = \\lim_{c \\to \\frac{\\pi}{2}-0} \\int_{0}^{c} \\tan x\\ dx\\]\\[ = \\lim_{c \\to \\frac{\\pi}{2}-0} [-\\ln|\\cos x|\\ ]_{0}^{c} = \\infty\\]"
         },
         {
-            question: "\\[\\int_{0}^{2} \\frac{1}{(x-1)^2} dx\\]",
-            choices: ["発散", 2, 1, 0, "\\frac{1}{2}", "\\frac{3}{2}"],
+            question: "\\[\\int_{1}^{\\infty} e^{- x}\\ dx\\]",
+            choices: ["e^{- 1}", "e", "1", "2", "\\frac{1}{2}", "\\frac{3}{2}"],
             correctIndex: 0,
-            explanation: "\\(x=1\\) で被積分関数が発散します。\\[\\int_{0}^{2} \\frac{1}{(x-1)^2} dx = \\int_{0}^{1} \\frac{1}{(x-1)^2} dx + \\int_{1}^{2} \\frac{1}{(x-1)^2} dx\\] 両方の発散"
+            explanation: "\\[\\int_{1}^{\\infty} e^{- x}\\ dx = \\lim_{c\\to \\infty}\\int_{1}^{c} e^{- x}\\ dx = \\lim_{c\\to \\infty}[-e^{- x}]_{1}^{c}\\]\\[  = \\lim_{c\\to \\infty}(-e^{-c}) + e^{- 1} = e^{- 1}\\]"
         },
         {
             question: "\\[\\int_{0}^{\\infty} \\sin x dx\\]",
-            choices: ["発散", 0, 1, "\\pi", "-1", "\\infty"],
+            choices: ["発散", 0, 1, "\\pi", "-1", "\\frac{\\sqrt{2}}{2}"],
             correctIndex: 0,
-            explanation: "振動積分\\[\\lim_{b \\to \\infty} \\int_{0}^{b} \\sin x dx = \\lim_{b \\to \\infty} [-\\cos x]_0^b = \\lim_{b \\to \\infty} (1 - \\cos b)\\] 振動する"
+            explanation: "\\[\\lim_{c \\to \\infty} \\int_{0}^{c} \\sin x dx = \\lim_{c \\to \\infty} [-\\cos x]_0^c = \\lim_{c \\to \\infty} (1 - \\cos c)\\] \\(1-\\cos c\\)\\ は振動するので発散する。"
         }
     ],
     intermediate: [
