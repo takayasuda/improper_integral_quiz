@@ -3,31 +3,31 @@ const problems = {
     beginner: [
         {
             question: "\\[\\int_{1}^{\\infty} \\frac{1}{x^2} dx\\]",
-            choices: [1, 2, 0, "発散", "-1", "1/2"],
+            choices: [1, 2, 0, "発散", "-1", "\\frac{1}{2}"],
             correctIndex: 0,
             explanation: "\\[\\lim_{c \\to \\infty} \\int_{1}^{c} x^{-2} dx = \\lim_{c \\to \\infty} \\left[-x^{-1}\\right]_1^c = \\lim_{c \\to \\infty} \\left(-\\frac{1}{c} + 1\\right) = 1\\]"
         },
         {
             question: "\\[\\int_{0}^{1} \\frac{1}{\\sqrt{x}} dx\\]",
-            choices: [2, 1, 0, "発散", "1/2", "\\sqrt{2}"],
+            choices: [2, 1, 0, "発散", "\\frac{1}{2}", "\\sqrt{2}"],
             correctIndex: 0,
             explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\lim_{c \\to +0} \\int_{c}^{1} x^{-1/2} dx = \\lim_{c \\to +0} \\left[2\\sqrt{x}\\right]_c^1 = 2(1 - 0) = 2\\]"
         },
         {
             question: "\\[\\int_{0}^{\\infty} \\frac{1}{1+x^2} dx\\]",
-            choices: ["\\pi/2", "\\pi", "2 \\pi", "1", "\\infty", "0"],
+            choices: ["\\frac{\\pi}{2}", "\\pi", "2 \\pi", "1", "\\infty", "0"],
             correctIndex: 0,
             explanation: "\\[\\int_{0}^{\\infty} \\frac{1}{1+x^2} dx = \\lim_{c\\to \\infty}\\int_{0}^{c} \\frac{1}{1+x^2} dx\\] \\[ = \\lim_{c\\to \\infty}\\left[\\mathrm{arctan}\\ x\\right]_{0}^{c} = \\lim_{c\\to \\infty}\\mathrm{arctan}\\ c =\\frac{π}{2}\\]"
         },
         {
             question: "\\[\\int_{0}^{1} \\ln x dx\\]",
-            choices: [-1, 0, "発散", "1", "e", "-∞"],
+            choices: [-1, 0, "発散", "1", "e", "- \\infty"],
             correctIndex: 0,
             explanation: "部分積分法で計算\\[\\int_{0}^{1} \\ln x dx = \\left[x\\ln x - x\\right]_0^1 = (-1) - \\lim_{x\\to0^+} (x\\ln x - x) = -1\\]"
         },
         {
             question: "\\[\\int_{0}^{1} \\frac{1}{x^{2/3}} dx\\]",
-            choices: [3, 6, 0, "発散", "2", "3/2"],
+            choices: [3, 6, 0, "発散", "2", "\\frac{3}{2}"],
             correctIndex: 0,
             explanation: "\\(x=0\\) で被積分関数が発散します。\\[\\int_{0}^{1} x^{-2/3} dx = \\lim_{\\varepsilon\\rightarrow +0}\\int_{\\varepsilon}^{1} x^{-2/3} dx = \\lim_{\\varepsilon\\rightarrow +0}\\left[3x^{1/3}\\right]_{\\varepsilon}^1 = 3\\]"
         },
@@ -45,7 +45,7 @@ const problems = {
         },
         {
             question: "\\[\\int_{0}^{\\infty} \\sin x dx\\]",
-            choices: ["発散", 0, 1, "π", "-1", "∞"],
+            choices: ["発散", 0, 1, "\\pi", "-1", "\\infty"],
             correctIndex: 0,
             explanation: "振動積分\\[\\lim_{b \\to \\infty} \\int_{0}^{b} \\sin x dx = \\lim_{b \\to \\infty} [-\\cos x]_0^b = \\lim_{b \\to \\infty} (1 - \\cos b)\\] 振動する"
         }
@@ -53,7 +53,7 @@ const problems = {
     intermediate: [
         {
             question: "\\[\\int_{-\\infty}^{\\infty} \\frac{1}{x^2 + 1} dx\\]",
-            choices: ["π", "2π", "π/2", "1", "∞", "-∞"],
+            choices: ["\\pi", "2 \\pi", "\\frac{\\pi}{2}", "1", "\\infty", "- \\infty"],
             correctIndex: 0,
             explanation: "標準的な積分結果\\[\\int_{-\\infty}^{\\infty} \\frac{1}{x^2 + 1} dx = \\left[\\tan^{-1}x\\right]_{-\\infty}^{\\infty} = \\frac{π}{2} - (-\\frac{π}{2}) = π\\]"
         },
