@@ -47,7 +47,7 @@ const problems = {
             question: "\\[\\int_{0}^{\\infty} \\sin x dx\\]",
             choices: ["発散", 0, 1, "\\pi", "-1", "\\frac{\\sqrt{2}}{2}"],
             correctIndex: 0,
-            explanation: "\\[\\lim_{c \\to \\infty} \\int_{0}^{c} \\sin x dx = \\lim_{c \\to \\infty} [-\\cos x]_0^c = \\lim_{c \\to \\infty} (1 - \\cos c)\\] \\(1-\\cos c\\)\\ は振動するので発散する。"
+            explanation: "\\[\\lim_{c \\to \\infty} \\int_{0}^{c} \\sin x dx = \\lim_{c \\to \\infty} [-\\cos x]_0^c = \\lim_{c \\to \\infty} (1 - \\cos c)\\] \\(1-\\cos c\\) は振動するので発散する。"
         }
     ],
     intermediate: [
